@@ -1,31 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Panel</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel - Zain Store</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Admin Panel</h1>
+  <!-- Navbar -->
+  <nav class="admin-navbar">
+    <div class="logo">🛍️ Zain Admin</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="admin-panel.html" class="active">Dashboard</a></li>
+      <li><button id="logoutBtn">Logout</button></li>
+    </ul>
+  </nav>
 
-  <!-- Category Form -->
-  <section class="admin-section">
-    <h2>Add Category</h2>
-    <input type="text" id="catName" placeholder="Category name">
-    <button id="addCategoryBtn">Add Category</button>
-  </section>
+  <main class="admin-container">
+    <!-- Category -->
+    <section class="admin-card">
+      <h2>Add Category</h2>
+      <div class="form-group">
+        <input type="text" id="catName" placeholder="Enter Category Name" />
+        <button id="addCatBtn">Add</button>
+      </div>
+      <ul id="catList"></ul>
+    </section>
 
-  <!-- Product Form -->
-  <section class="admin-section">
-    <h2>Add Product</h2>
-    <select id="categorySelect"></select>
-    <input type="text" id="prodName" placeholder="Product name">
-    <input type="number" id="prodPrice" placeholder="Price">
-    <input type="text" id="prodImage" placeholder="Image URL">
-    <textarea id="prodDesc" placeholder="Description"></textarea>
-    <button id="addProductBtn">Add Product</button>
-  </section>
+    <!-- Product -->
+    <section class="admin-card">
+      <h2>Add Product</h2>
+      <div class="form-group">
+        <select id="catSelect">
+          <option value="">Select Category</option>
+        </select>
+        <input type="text" id="prodName" placeholder="Product Name" />
+        <input type="number" id="prodPrice" placeholder="Price" />
+        <input type="text" id="prodImg" placeholder="Image URL" />
+        <textarea id="prodDesc" placeholder="Product Description"></textarea>
+        <button id="addProdBtn">Add Product</button>
+      </div>
+    </section>
+
+    <!-- Product List -->
+    <section class="admin-card product-section">
+      <h2>All Products</h2>
+      <div id="prodList" class="product-grid"></div>
+    </section>
+  </main>
+
+  <h2>Orders</h2>
+<table id="ordersTable" border="1" style="width:100%;border-collapse:collapse;">
+  <thead>
+    <tr style="background:#B9375D;color:white;">
+      <th>ID</th>
+      <th>Product</th>
+      <th>User</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody id="ordersBody"></tbody>
+</table>
+
+
+
+  <script type="module">
+  import { getUserSession, signOutUser } from "js/auth.js";
+
+  const { session } = await getUserSession();
+  if (!session) {
+    alert("Please login first!");
+    window.location.href = "index.html";
+  }
+
+  document.getElementById("logoutBtn").addEventListener("click", signOutUser);
+</script>
 
   <script type="module" src="js/admin.js"></script>
 </body>
