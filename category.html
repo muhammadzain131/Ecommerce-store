@@ -4,124 +4,72 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All Categories & Products</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
 
     <style>
-      /* ====== Page Styling ====== */
-      body {
-        font-family: "Poppins", sans-serif;
-        background: #EEEEEE;
-        margin: 0;
-        padding: 0;
-      }
-
       header {
-        background: linear-gradient(90deg, #B9375D, #D25D5D);
-        color: white;
-        padding: 15px 25px;
-        text-align: center;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      }
-
-      .container {
-        max-width: 1200px;
-        margin: 30px auto;
-        padding: 0 20px;
-      }
-
-      /* ===== Category Buttons ===== */
-      /* .category-bar {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 25px;
-      } */
-
-      /* .cat-btn {
-        background: #E7D3D3;
-        border: 2px solid #B9375D;
-        color: #B9375D;
-        padding: 8px 18px;
-        border-radius: 25px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: 0.3s;
-      } */
-
-      /* .cat-btn.active,
-      .cat-btn:hover {
-        background: #B9375D;
-        color: white;
-      } */
-
-      /* ===== Product Grid ===== */
-      /* .product-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-      }
-
-      .product-card {
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        overflow: hidden;
-        text-align: center;
-        transition: 0.3s;
-        cursor: pointer;
-      }
-
-      .product-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 6px 14px rgba(0,0,0,0.1);
-      }
-
-      .product-card img {
+        height: 70px;
         width: 100%;
-        height: 220px;
-        object-fit: contain;
-        background: #f7f7f7;
-      }
-
-      .product-card .info {
-        padding: 12px;
-      }
-
-      .product-card h3 {
-        color: #B9375D;
-        font-size: 1rem;
-        margin: 6px 0;
-      }
-
-      .product-card p {
-        color: #555;
-        font-size: 0.9rem;
-        min-height: 35px;
-      }
-
-      .price {
-        color: #D25D5D;
-        font-weight: bold;
-        margin-top: 5px;
-      } */
-
-      footer {
-        background: #E7D3D3;
-        text-align: center;
-        padding: 12px 0;
-        color: #444;
-        font-size: 0.9rem;
-        margin-top: 40px;
-        border-top: 3px solid #D25D5D;
       }
     </style>
   </head>
 
   <body>
-    <header>
-      <h1>Browse Products by Category</h1>
-    </header>
+    <header></header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><i class="bi bi-bag-heart"></i> ZainStore</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./category.html">Category</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./admin.html">Admin</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./login.html"
+                ><i class="bi bi-person"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="bi bi-search"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="bi bi-cart3"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     <main class="container">
       <!-- Category Buttons -->
@@ -131,10 +79,70 @@
       <div id="productGrid" class="product-grid"></div>
     </main>
 
-    <footer>
-      <p>© 2025 Zain’s Store — All Rights Reserved</p>
+    <!-- ===========================
+        FOOTER SECTION
+=========================== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row gy-4">
+          <!-- Contact Us -->
+          <div class="col-md-3 col-sm-6">
+            <h5>Contact Us</h5>
+            <p>
+              5.5 KM, Raiwind Road (Near Fatehbad Village)<br />Lahore,
+              Pakistan.
+            </p>
+            <p><i class="bi bi-telephone"></i> +923111162742, +923211224333</p>
+            <p><i class="bi bi-envelope"></i> help@mariab.ae</p>
+          </div>
+
+          <!-- Information -->
+          <div class="col-md-3 col-sm-6">
+            <h5>Information</h5>
+            <ul class="footer-links">
+              <li><a href="#">Returns and Exchange</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Store Locator</a></li>
+              <li><a href="#">Track Your Order</a></li>
+              <li><a href="#">Blogs</a></li>
+            </ul>
+          </div>
+
+          <!-- Customer Care -->
+          <div class="col-md-3 col-sm-6">
+            <h5>Customer Care</h5>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Terms and Conditions</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-md-3 col-sm-6">
+            <h5>Sign Up For Our Newsletter</h5>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Enter your email" required />
+              <button type="submit">SUBSCRIBE</button>
+            </form>
+            <div class="social-icons mt-3">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-tiktok"></i></a>
+              <a href="#"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom text-center mt-4">
+          <p>© 2025 Zain’s Store — All Rights Reserved</p>
+        </div>
+      </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="js/cat.js"></script>
   </body>
 </html>
